@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using tabletcka.Services;
 
 namespace tabletcka
 {
@@ -15,6 +16,11 @@ namespace tabletcka
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormController.CreateForms();
         }
     }
 }

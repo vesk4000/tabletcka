@@ -1,0 +1,10 @@
+C:\Users\zala2\Documents\HDD\tabletcka\bin\Debug\tabletcka.exe.config
+C:\Users\zala2\Documents\HDD\tabletcka\bin\Debug\tabletcka.exe
+C:\Users\zala2\Documents\HDD\tabletcka\bin\Debug\tabletcka.pdb
+C:\Users\zala2\Documents\HDD\tabletcka\obj\Debug\tabletcka.csproj.AssemblyReference.cache
+C:\Users\zala2\Documents\HDD\tabletcka\obj\Debug\tabletcka.Properties.Resources.resources
+C:\Users\zala2\Documents\HDD\tabletcka\obj\Debug\tabletcka.csproj.GenerateResource.cache
+C:\Users\zala2\Documents\HDD\tabletcka\obj\Debug\tabletcka.csproj.CoreCompileInputs.cache
+C:\Users\zala2\Documents\HDD\tabletcka\obj\Debug\tabletcka.exe
+C:\Users\zala2\Documents\HDD\tabletcka\obj\Debug\tabletcka.pdb
+C:\Users\zala2\Documents\HDD\tabletcka\obj\Debug\tabletcka.Form1.resources
