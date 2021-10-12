@@ -40,7 +40,6 @@ namespace tabletcka
             this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Test";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // FormActiveTest
             // 
