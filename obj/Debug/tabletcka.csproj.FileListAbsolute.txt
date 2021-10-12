@@ -8,3 +8,4 @@ C:\Users\zala2\Documents\HDD\tabletcka\obj\Debug\tabletcka.csproj.CoreCompileInp
 C:\Users\zala2\Documents\HDD\tabletcka\obj\Debug\tabletcka.exe
 C:\Users\zala2\Documents\HDD\tabletcka\obj\Debug\tabletcka.pdb
 C:\Users\zala2\Documents\HDD\tabletcka\obj\Debug\tabletcka.Form1.resources
+C:\Users\zala2\Documents\HDD\tabletcka\obj\Debug\tabletcka.FormActiveTest.resources

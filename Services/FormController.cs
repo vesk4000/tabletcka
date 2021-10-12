@@ -21,5 +21,16 @@ namespace tabletcka.Services
 			}
 		}
 
+		public static void CreateForms(int numberOfWindows)
+		{
+			FormActiveTest[] forms = new FormActiveTest[numberOfWindows];
+
+			for (int i = 0; i < numberOfWindows; i++)
+			{
+				forms[i] = new FormActiveTest();
+
+				forms[i].Show();
+			}
+		}
 	}
 }
