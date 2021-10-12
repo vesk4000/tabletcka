@@ -40,7 +40,6 @@ namespace tabletcka
             this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Test";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // FormActiveTest
             // 
@@ -50,7 +49,6 @@ namespace tabletcka
             this.Controls.Add(this.label1);
             this.Name = "FormActiveTest";
             this.Text = "frf";
-            this.Activated += new System.EventHandler(this.FormActiveTest_Activated);
             this.ResumeLayout(false);
             this.PerformLayout();
 
