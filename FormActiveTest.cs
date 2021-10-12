@@ -16,15 +16,5 @@ namespace tabletcka
         {
             InitializeComponent();
         }
-
-        private void FormActiveTest_Activated(object sender, EventArgs e)
-        {
-            MessageBox.Show("Hey hey");
-        }
-
-        protected override void OnActivated(EventArgs e)
-        {
-            MessageBox.Show("Hey hey"); 
-        }
     }
 }

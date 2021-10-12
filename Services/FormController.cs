@@ -15,14 +15,16 @@ namespace tabletcka.Services
 		
 		public static void CreateForms ()
 		{
-			Form[] forms = new Form[10];
+			FormActiveTest[] forms = new FormActiveTest[10];
 
 			for (int i = 0; i < 10; i ++)
 			{
-				forms[i] = new Form();
+				forms[i] = new FormActiveTest();
 				Forms.Add(forms[i]);
 
 				forms[i].Show();
+
+				forms[i].WindowState = FormWindowState.Minimized;
 			}
 		}
 
@@ -35,6 +37,8 @@ namespace tabletcka.Services
 				forms[i] = new FormActiveTest();
 				Forms.Add(forms[i]);
 				forms[i].Show();
+
+				forms[i].WindowState = FormWindowState.Minimized;
 			}
 		}
 	}

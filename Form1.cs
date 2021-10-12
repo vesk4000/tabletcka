@@ -21,6 +21,17 @@ namespace tabletcka
         private void button1_Click(object sender, EventArgs e)
         {
             FormController.CreateForms();
+
+            Form currentForm = Form.ActiveForm;
+
+            this.Activate();
+
+            Task.Delay(2000);
+
+            if (Form.ActiveForm == FormActiveTest.ActiveForm)
+            {
+                MessageBox.Show("Hey");
+            }
         }
     }
 }
