@@ -22,7 +22,9 @@ namespace tabletcka
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(FirstForm = new MainForm());
+			FirstForm = new MainForm();
+			FirstForm.Show();
+			Application.Run();
 		}
 	}
 }

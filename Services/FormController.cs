@@ -12,8 +12,26 @@ namespace tabletcka.Services
 	{
 		public static int NumberRedForms = 0;
 		public static List<Form> Forms = new List<Form> { Program.FirstForm };
-		
-		public static void CreateForms ()
+		public static SettingsForm Settings;
+
+		public static void RefreshForms(int numRedForms)
+		{
+			NumberRedForms = numRedForms;
+			DeleteForms();
+			CreateForms(numRedForms, FormColor.Red);
+			if (Settings != null)
+				Settings.BringToFront();
+		}
+
+		public static void DeleteForms()
+		{
+			while(Forms.Count > 0)
+			{
+				Forms[0].Close();
+			}
+		}
+
+		public static void CreateForms()
 		{
 			FormActiveTest[] forms = new FormActiveTest[10];
 
@@ -40,6 +58,22 @@ namespace tabletcka.Services
 
 				forms[i].WindowState = FormWindowState.Minimized;
 			}
+		}
+
+		public static void CreateForms(int numForms, FormColor color)
+		{
+			for (int i = 0; i < numForms; i++)
+			{
+				MainForm form = new MainForm(color);
+				Forms.Add(form);
+				form.Show();
+			}
+		}
+
+		public static void CheckToCloseApp()
+		{
+			if (Settings == null && Forms.Count == 0)
+				Application.Exit();
 		}
 	}
 }
