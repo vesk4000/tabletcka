@@ -11,14 +11,44 @@ namespace tabletcka.Services
 	public static class FormController
 	{
 		public static int NumberRedForms = 0;
-		public static List<Form> Forms = new List<Form> { Program.FirstForm };
+		public static int NumberBlackForms = 0;
+		public static List<Form> Forms = new List<Form>();
 		public static SettingsForm Settings;
 
-		public static void RefreshForms(int numRedForms)
+		public static void RefreshForms(int numRedForms = -1, int numBlackForms = -1)
 		{
-			NumberRedForms = numRedForms;
+			if(numRedForms != -1)
+				NumberRedForms = numRedForms;
+			if (numBlackForms != -1)
+				NumberBlackForms = numBlackForms;
 			DeleteForms();
-			CreateForms(numRedForms, FormColor.Red);
+
+			numRedForms = 0;
+			numBlackForms = 0;
+
+			for(int i = 0; i < NumberRedForms + NumberBlackForms; ++i)
+			{
+				if(NumberBlackForms == 0)
+				{
+					CreateForms(1, FormColor.Red);
+					numRedForms++;
+				}
+				else if(numBlackForms == 0)
+				{
+					CreateForms(1, FormColor.Black);
+					numBlackForms++;
+				}
+				else if ((float)numRedForms / numBlackForms < (float)NumberRedForms / NumberBlackForms)
+				{
+					CreateForms(1, FormColor.Red);
+					numRedForms++;
+				}
+				else
+				{
+					CreateForms(1, FormColor.Black);
+					numBlackForms++;
+				}
+			}
 			if (Settings != null)
 				Settings.BringToFront();
 		}

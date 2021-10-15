@@ -17,18 +17,26 @@ namespace tabletcka.Forms
 		{
 			InitializeComponent();
 			numericUpDownRed.Value = FormController.NumberRedForms;
+			numericUpDownBlack.Value = FormController.NumberBlackForms;
 		}
 
 		private void ButtonRefresh_Click(object sender, EventArgs e)
 		{
-			//FormController.SetRedForms(int.Parse(LabelRed.Text));
-			FormController.RefreshForms((int)numericUpDownRed.Value);
+			FormController.RefreshForms((int)numericUpDownRed.Value, (int)numericUpDownBlack.Value);
 		}
 
 		private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			FormController.Settings = null;
 			FormController.CheckToCloseApp();
+		}
+
+		private void numericUpDownRed_ValueChanged(object sender, EventArgs e)
+		{
+			/*if(checkBoxKeepRedBlackRatio.Checked)
+			{
+				numericUpDownBlack.Value = ((float)numericUpDownBlack / numericUpDownRed.Value) * 
+			}*/
 		}
 	}
 }

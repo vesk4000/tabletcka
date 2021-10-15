@@ -13,17 +13,14 @@ namespace tabletcka
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
-		/// 
-
-		public static Form FirstForm;
 
 		[STAThread]
 		static void Main()
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			FirstForm = new MainForm();
-			FirstForm.Show();
+			Form Settings = new SettingsForm();
+			Settings.Show();
 			Application.Run();
 		}
 	}

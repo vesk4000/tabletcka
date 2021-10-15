@@ -13,6 +13,8 @@ namespace tabletcka.Forms
 {
 	public partial class MainForm : Form
 	{
+		public FormColor Color;
+
 		public MainForm()
 		{
 			InitializeComponent();
@@ -21,6 +23,7 @@ namespace tabletcka.Forms
 		public MainForm(FormColor color)
 		{
 			InitializeComponent();
+			Color = color;
 			BackColor = color;
 		}
 
@@ -38,8 +41,17 @@ namespace tabletcka.Forms
 
 		private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
 		{
+			if (Color == FormColor.Red)
+				FormController.NumberRedForms--;
+			if (Color == FormColor.Black)
+				FormController.NumberBlackForms--;
 			FormController.Forms.Remove(this);
 			FormController.CheckToCloseApp();
+		}
+
+		private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Application.Exit();
 		}
 	}
 }

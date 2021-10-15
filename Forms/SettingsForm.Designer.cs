@@ -34,6 +34,7 @@ namespace tabletcka.Forms
 			this.LabelBlack = new System.Windows.Forms.Label();
 			this.numericUpDownBlack = new System.Windows.Forms.NumericUpDown();
 			this.ButtonRefresh = new System.Windows.Forms.Button();
+			this.checkBoxKeepRedBlackRatio = new System.Windows.Forms.CheckBox();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownRed)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownBlack)).BeginInit();
 			this.SuspendLayout();
@@ -49,6 +50,7 @@ namespace tabletcka.Forms
 			this.numericUpDownRed.Name = "numericUpDownRed";
 			this.numericUpDownRed.Size = new System.Drawing.Size(60, 20);
 			this.numericUpDownRed.TabIndex = 0;
+			this.numericUpDownRed.ValueChanged += new System.EventHandler(this.numericUpDownRed_ValueChanged);
 			// 
 			// LabelRed
 			// 
@@ -85,11 +87,22 @@ namespace tabletcka.Forms
 			this.ButtonRefresh.UseVisualStyleBackColor = true;
 			this.ButtonRefresh.Click += new System.EventHandler(this.ButtonRefresh_Click);
 			// 
+			// checkBoxKeepRedBlackRatio
+			// 
+			this.checkBoxKeepRedBlackRatio.AutoSize = true;
+			this.checkBoxKeepRedBlackRatio.Location = new System.Drawing.Point(16, 36);
+			this.checkBoxKeepRedBlackRatio.Name = "checkBoxKeepRedBlackRatio";
+			this.checkBoxKeepRedBlackRatio.Size = new System.Drawing.Size(181, 17);
+			this.checkBoxKeepRedBlackRatio.TabIndex = 5;
+			this.checkBoxKeepRedBlackRatio.Text = "Keep red and black window ratio";
+			this.checkBoxKeepRedBlackRatio.UseVisualStyleBackColor = true;
+			// 
 			// SettingsForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(384, 161);
+			this.Controls.Add(this.checkBoxKeepRedBlackRatio);
 			this.Controls.Add(this.ButtonRefresh);
 			this.Controls.Add(this.LabelBlack);
 			this.Controls.Add(this.numericUpDownBlack);
@@ -112,5 +125,6 @@ namespace tabletcka.Forms
         private System.Windows.Forms.Label LabelBlack;
         private System.Windows.Forms.NumericUpDown numericUpDownBlack;
         private System.Windows.Forms.Button ButtonRefresh;
-    }
+		private System.Windows.Forms.CheckBox checkBoxKeepRedBlackRatio;
+	}
 }
