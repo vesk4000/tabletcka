@@ -76,6 +76,7 @@ namespace tabletcka.Forms
 			this.numericUpDownBlack.Name = "numericUpDownBlack";
 			this.numericUpDownBlack.Size = new System.Drawing.Size(60, 20);
 			this.numericUpDownBlack.TabIndex = 2;
+			this.numericUpDownBlack.ValueChanged += new System.EventHandler(this.numericUpDownBlack_ValueChanged);
 			// 
 			// ButtonRefresh
 			// 
@@ -96,6 +97,7 @@ namespace tabletcka.Forms
 			this.checkBoxKeepRedBlackRatio.TabIndex = 5;
 			this.checkBoxKeepRedBlackRatio.Text = "Keep red and black window ratio";
 			this.checkBoxKeepRedBlackRatio.UseVisualStyleBackColor = true;
+			this.checkBoxKeepRedBlackRatio.CheckedChanged += new System.EventHandler(this.checkBoxKeepRedBlackRatio_CheckedChanged);
 			// 
 			// SettingsForm
 			// 
