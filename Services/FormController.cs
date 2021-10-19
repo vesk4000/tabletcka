@@ -17,11 +17,12 @@ namespace tabletcka.Services
 
 		public static void RefreshForms(int numRedForms = -1, int numBlackForms = -1)
 		{
-			if(numRedForms != -1)
+			DeleteForms();
+
+			if (numRedForms != -1)
 				NumberRedForms = numRedForms;
 			if (numBlackForms != -1)
 				NumberBlackForms = numBlackForms;
-			DeleteForms();
 
 			numRedForms = 0;
 			numBlackForms = 0;

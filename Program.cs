@@ -14,12 +14,15 @@ namespace tabletcka
 		/// The main entry point for the application.
 		/// </summary>
 
+		public static SettingsForm Settings;
+
 		[STAThread]
 		static void Main()
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Form Settings = new SettingsForm();
+			Settings = new SettingsForm();
+			FormController.Settings = Settings;
 			Settings.Show();
 			Application.Run();
 		}
