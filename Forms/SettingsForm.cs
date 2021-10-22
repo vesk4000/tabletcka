@@ -1,4 +1,5 @@
-﻿using System;
+﻿using New_Desktop;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,10 +10,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using tabletcka.Services;
 
+using System.Diagnostics;
+using System.Collections.Specialized;
+using System.Windows.Controls;
+using System.Web.UI.WebControls;
+
 namespace tabletcka.Forms
 {
 	public partial class SettingsForm : Form
 	{
+		WindowDesktop _d = null;
+		IntPtr _ptrDefaultDesktopThread;
+		WindowDesktop _wdDefault = new WindowDesktop("Default");
+		ListBox<string> lstDesktops;
+
+
 		public SettingsForm()
 		{
 			InitializeComponent();
@@ -69,7 +81,7 @@ namespace tabletcka.Forms
 			else if(numBlack == -1)
 			{
 				dontUpdate = true;
-				numericUpDownBlack.Value = (int)((1 / ratio) * numRed);
+				numericUpDownBlack.Value = ratio == 0 ? 0 : (int)((1 / ratio) * numRed);
 			}
 		}
 
@@ -80,12 +92,41 @@ namespace tabletcka.Forms
 				if (numericUpDownRed.Value == 0 && numericUpDownBlack.Value == 0)
 					ratio = 1;
 				else if (numericUpDownRed.Value != 0 && numericUpDownBlack.Value == 0)
-					ratio = 1;
+					ratio = 0;
 				else if (numericUpDownRed.Value == 0 && numericUpDownBlack.Value != 0)
-					ratio = 1;
+					ratio = 0;
 				else
 					ratio = (float)(numericUpDownRed.Value / numericUpDownBlack.Value);
 			}
 		}
-	}
+
+		private void NewDesktop_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				//make a new desktop 
+				_d = new WindowDesktop("myDesktop");
+
+				//get all the desktops for this Window Station
+				StringCollection scDesktops = WindowDesktop.GetDesktops();
+				if (scDesktops != null && scDesktops.Count > 0)
+				{
+					for (int i = 0; i < scDesktops.Count; i++)
+					{
+						lstDesktops.Items.Add(scDesktops[i]);
+
+						//get all the windows for the specified Desktop
+						StringCollection scWindows = WindowDesktop.GetDesktopWindows(_d);
+						if (scWindows != null && scWindows.Count > 0)
+						{
+							for (int j = 0; j < scWindows.Count; j++)
+							{
+								lstWindows.Items.Add(scWindows[j]);
+							}
+						}
+					}
+				}
+			}
+		}
+    }
 }
